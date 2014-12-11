@@ -1,7 +1,9 @@
 package <%=packageName%>.web.websocket.dto;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.atmosphere.config.managed.Decoder;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

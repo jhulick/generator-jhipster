@@ -1,6 +1,7 @@
 package <%=packageName%>.config.oauth2;
 
 import com.mongodb.DBObject;
+
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.ReadingConverter;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,13 +24,11 @@ public class OAuth2AuthenticationReadConverter implements Converter<DBObject, OA
     public OAuth2Authentication convert(DBObject source) {
         DBObject storedRequest = (DBObject)source.get("storedRequest");
         OAuth2Request oAuth2Request = new OAuth2Request((Map<String, String>)storedRequest.get("requestParameters"),
-                (String)storedRequest.get("clientId"), null, true, new HashSet((List)storedRequest.get("scope")),
-                null, null, null, null);
+                (String)storedRequest.get("clientId"), null, true, new HashSet((List)storedRequest.get("scope")), null, null, null, null);
 
         DBObject userAuthorization = (DBObject)source.get("userAuthentication");
         Object principal = getPrincipalObject(userAuthorization.get("principal"));
-        Authentication userAuthentication = new UsernamePasswordAuthenticationToken(principal,
-                userAuthorization.get("credentials"), getAuthorities((List) userAuthorization.get("authorities")));
+        Authentication userAuthentication = new UsernamePasswordAuthenticationToken(principal, userAuthorization.get("credentials"), getAuthorities((List) userAuthorization.get("authorities")));
 
         return new OAuth2Authentication(oAuth2Request,  userAuthentication );
     }

@@ -2,6 +2,7 @@ package <%=packageName%>.config;
 <% if (authenticationType == 'cookie') { %>
 import <%=packageName%>.security.*;
 import <%=packageName%>.web.filter.CsrfCookieGeneratorFilter;<% } %>
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;<% if (authenticationType == 'cookie') { %>
 import org.springframework.core.env.Environment;<% } %><% if (authenticationType == 'token') { %>

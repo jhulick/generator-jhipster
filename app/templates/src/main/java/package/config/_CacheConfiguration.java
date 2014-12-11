@@ -2,14 +2,17 @@ package <%=packageName%>.config;
 <% if (hibernateCache == 'ehcache' && databaseType == 'sql') { %>
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.ehcache.InstrumentedEhcache;<% } %><% if (hibernateCache == 'hazelcast' || clusteredHttpSession == 'hazelcast') { %>
+
 import com.hazelcast.config.Config;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.instance.HazelcastInstanceFactory;
 import com.hazelcast.config.MapConfig;<% } %><% if (hibernateCache == 'hazelcast') { %>
 import com.hazelcast.config.MaxSizeConfig;<% } %>
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -20,6 +23,7 @@ import org.springframework.cache.support.NoOpCacheManager; <% } %><% if (hiberna
 import org.springframework.cache.ehcache.EhCacheCacheManager;<% } %><% if (hibernateCache == 'hazelcast' || hibernateCache == 'ehcache' || clusteredHttpSession == 'hazelcast') { %>
 import org.springframework.core.env.Environment;<% } %><% if (hibernateCache == 'ehcache' && databaseType == 'sql') { %>
 import org.springframework.util.Assert;<% } %>
+
 <% if (hibernateCache == 'hazelcast' || clusteredHttpSession == 'hazelcast') { %>
 import javax.annotation.PostConstruct;<% } %>
 import javax.annotation.PreDestroy;
@@ -27,6 +31,7 @@ import javax.inject.Inject;<% if (hibernateCache == 'ehcache' && databaseType ==
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.metamodel.EntityType;
+
 import java.util.Set;
 import java.util.SortedSet;<% } %>
 

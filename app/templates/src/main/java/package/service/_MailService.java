@@ -2,14 +2,17 @@ package <%=packageName%>.service;
 
 import <%=packageName%>.domain.User;
 import org.apache.commons.lang.CharEncoding;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.context.MessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
@@ -38,7 +41,7 @@ public class MailService {
 
     @Inject
     private MessageSource messageSource;
-    
+
     @Inject
     private SpringTemplateEngine templateEngine;
 

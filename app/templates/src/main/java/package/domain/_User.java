@@ -1,12 +1,15 @@
 package <%=packageName%>.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;<% if (hibernateCache != 'no' && databaseType == 'sql') { %>
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;<% } %>
 import org.hibernate.validator.constraints.Email;
+
 <% if (databaseType == 'nosql') { %>import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
 <% } %><% if (databaseType == 'sql') { %>
 import javax.persistence.*;<% } %>
 import javax.validation.constraints.NotNull;

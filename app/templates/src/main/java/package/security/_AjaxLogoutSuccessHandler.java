@@ -1,12 +1,14 @@
 package <%=packageName%>.security;
 <% if (authenticationType == 'token') { %>
 import org.apache.commons.lang.StringUtils;<% } %>
+
 import org.springframework.security.core.Authentication;<% if (authenticationType == 'token') { %>
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;<% } %>
 import org.springframework.security.web.authentication.AbstractAuthenticationTargetUrlRequestHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.stereotype.Component;
+
 <% if (authenticationType == 'token') { %>
 import javax.inject.Inject;<% } %>
 import javax.servlet.ServletException;

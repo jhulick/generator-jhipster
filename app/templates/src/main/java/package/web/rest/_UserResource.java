@@ -1,11 +1,14 @@
 package <%=packageName%>.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+
 import <%=packageName%>.domain.User;
 import <%=packageName%>.repository.UserRepository;
 import <%=packageName%>.security.AuthoritiesConstants;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;<% if (javaVersion == '8') { %>
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;<% } %>
 import org.springframework.http.MediaType;

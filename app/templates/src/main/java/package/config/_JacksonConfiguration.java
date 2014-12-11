@@ -3,7 +3,9 @@ package <%=packageName%>.config;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.fasterxml.jackson.datatype.joda.ser.DateTimeSerializer;
 import com.fasterxml.jackson.datatype.joda.ser.JacksonJodaFormat;
+
 import org.joda.time.DateTime;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.annotation.DateTimeFormat;

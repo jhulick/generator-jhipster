@@ -2,8 +2,10 @@ package <%=packageName%>.domain;
 
 <% if (hibernateCache != 'no' && databaseType == 'sql') { %>import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;<% } %><% if (databaseType == 'nosql') { %>
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;<% } %><% if (databaseType == 'sql') { %>
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;

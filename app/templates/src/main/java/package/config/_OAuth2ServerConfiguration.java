@@ -6,6 +6,7 @@ import <%=packageName%>.repository.OAuth2RefreshTokenRepository;<% } %>
 import <%=packageName%>.security.AjaxLogoutSuccessHandler;
 import <%=packageName%>.security.AuthoritiesConstants;
 import <%=packageName%>.security.Http401UnauthorizedEntryPoint;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;

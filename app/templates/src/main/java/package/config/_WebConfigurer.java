@@ -3,17 +3,22 @@ package <%=packageName%>.config;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.servlet.InstrumentedFilter;
 import com.codahale.metrics.servlets.MetricsServlet;<% if (clusteredHttpSession == 'hazelcast') { %>
+
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.web.SessionListener;
 import com.hazelcast.web.WebFilter;<% } %>
+
 import <%=packageName%>.web.filter.CachingHttpHeadersFilter;
 import <%=packageName%>.web.filter.StaticResourcesProductionFilter;
 import <%=packageName%>.web.filter.gzip.GZipServletFilter;<% if (websocket == 'atmosphere') { %>
+
 import org.atmosphere.cache.UUIDBroadcasterCache;
 import org.atmosphere.cpr.AtmosphereFramework;
 import org.atmosphere.cpr.AtmosphereServlet;<% } %>
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
@@ -27,6 +32,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;<% } %
 
 import javax.inject.Inject;
 import javax.servlet.*;<% if (websocket == 'atmosphere') { %>
+
 import java.lang.reflect.Field;<% } %>
 import java.util.Arrays;
 import java.util.EnumSet;

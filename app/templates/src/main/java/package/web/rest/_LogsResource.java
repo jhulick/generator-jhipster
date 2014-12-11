@@ -2,12 +2,17 @@ package <%=packageName%>.web.rest;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
+
 import com.codahale.metrics.annotation.Timed;
+
 import <%=packageName%>.web.rest.dto.LoggerDTO;
+
 import org.slf4j.LoggerFactory;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
 <% if (javaVersion != '8') { %>
 import java.util.ArrayList;<% } %>
 import java.util.List;<% if (javaVersion == '8') { %>

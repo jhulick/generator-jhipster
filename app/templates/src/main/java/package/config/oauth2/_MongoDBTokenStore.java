@@ -4,6 +4,7 @@ import <%=packageName%>.domain.OAuth2AuthenticationAccessToken;
 import <%=packageName%>.domain.OAuth2AuthenticationRefreshToken;
 import <%=packageName%>.repository.OAuth2AccessTokenRepository;
 import <%=packageName%>.repository.OAuth2RefreshTokenRepository;
+
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -25,8 +26,7 @@ public class MongoDBTokenStore implements TokenStore {
 
     private AuthenticationKeyGenerator authenticationKeyGenerator = new DefaultAuthenticationKeyGenerator();
 
-    public MongoDBTokenStore(final OAuth2AccessTokenRepository oAuth2AccessTokenRepository,
-                             final OAuth2RefreshTokenRepository oAuth2RefreshTokenRepository) {
+    public MongoDBTokenStore(final OAuth2AccessTokenRepository oAuth2AccessTokenRepository, final OAuth2RefreshTokenRepository oAuth2RefreshTokenRepository) {
         this.oAuth2AccessTokenRepository = oAuth2AccessTokenRepository;
         this.oAuth2RefreshTokenRepository = oAuth2RefreshTokenRepository;
     }
@@ -43,8 +43,7 @@ public class MongoDBTokenStore implements TokenStore {
 
     @Override
     public void storeAccessToken(OAuth2AccessToken token, OAuth2Authentication authentication) {
-        OAuth2AuthenticationAccessToken oAuth2AuthenticationAccessToken = new OAuth2AuthenticationAccessToken(token,
-                authentication, authenticationKeyGenerator.extractKey(authentication));
+        OAuth2AuthenticationAccessToken oAuth2AuthenticationAccessToken = new OAuth2AuthenticationAccessToken(token, authentication, authenticationKeyGenerator.extractKey(authentication));
         oAuth2AccessTokenRepository.save(oAuth2AuthenticationAccessToken);
     }
 

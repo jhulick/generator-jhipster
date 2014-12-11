@@ -1,10 +1,13 @@
 package <%=packageName%>.domain;
 <% if (databaseType == 'sql') { %>
 import org.hibernate.annotations.Type;<% } %>
+
 import org.joda.time.LocalDateTime;<% if (databaseType == 'nosql') { %>
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;<% } %><% if (databaseType == 'sql') { %>
+
 import javax.persistence.*;<% } %>
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;

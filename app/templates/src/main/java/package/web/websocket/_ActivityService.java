@@ -1,14 +1,18 @@
 package <%=packageName%>.web.websocket;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import <%=packageName%>.web.websocket.dto.ActivityDTO;
 import <%=packageName%>.web.websocket.dto.ActivityDTOJacksonDecoder;
+
 import org.atmosphere.config.service.Disconnect;
 import org.atmosphere.config.service.ManagedService;
 import org.atmosphere.config.service.Message;
 import org.atmosphere.cpr.*;
+
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

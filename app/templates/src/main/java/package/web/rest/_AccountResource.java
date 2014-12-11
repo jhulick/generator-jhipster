@@ -1,6 +1,7 @@
 package <%=packageName%>.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+
 import <%=packageName%>.domain.Authority;<% if (authenticationType == 'cookie') { %>
 import <%=packageName%>.domain.PersistentToken;<% } %>
 import <%=packageName%>.domain.User;<% if (authenticationType == 'cookie') { %>
@@ -10,9 +11,11 @@ import <%=packageName%>.security.SecurityUtils;
 import <%=packageName%>.service.MailService;
 import <%=packageName%>.service.UserService;
 import <%=packageName%>.web.rest.dto.UserDTO;
+
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

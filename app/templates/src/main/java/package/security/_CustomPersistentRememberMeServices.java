@@ -4,9 +4,12 @@ import <%=packageName%>.domain.PersistentToken;
 import <%=packageName%>.domain.User;
 import <%=packageName%>.repository.PersistentTokenRepository;
 import <%=packageName%>.repository.UserRepository;
+
 import org.joda.time.LocalDate;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.core.env.Environment;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;

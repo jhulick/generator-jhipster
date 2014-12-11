@@ -2,14 +2,19 @@ package <%=packageName%>.config;
 
 <% if (databaseType == 'sql') { %>import com.codahale.metrics.MetricRegistry;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
+
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
 import liquibase.integration.spring.SpringLiquibase;<% } %><% if (databaseType == 'nosql' && authenticationType == 'token') { %>
+
 import <%=packageName%>.config.oauth2.OAuth2AuthenticationReadConverter;<% } %><% if (databaseType == 'nosql') { %>
 import com.mongodb.Mongo;
 import org.mongeez.Mongeez;<% } %>
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;<% if (databaseType == 'sql') { %>
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;<% } %><% if (databaseType == 'nosql') { %>
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;

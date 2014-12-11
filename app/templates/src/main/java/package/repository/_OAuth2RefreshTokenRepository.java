@@ -1,6 +1,7 @@
 package <%=packageName%>.repository;
 
 import <%=packageName%>.domain.OAuth2AuthenticationRefreshToken;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

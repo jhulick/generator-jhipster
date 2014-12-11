@@ -1,7 +1,9 @@
 package <%=packageName%>.repository;
 
 import <%=packageName%>.domain.User;
+
 import org.joda.time.DateTime;<% if (databaseType == 'sql') { %>
+
 import org.springframework.data.jpa.repository.JpaRepository;<% } %><% if (databaseType == 'nosql') { %>
 import org.springframework.data.mongodb.repository.MongoRepository;<% } %>
 

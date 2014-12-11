@@ -2,10 +2,12 @@ package <%=packageName%>.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.cloud.config.java.AbstractCloudConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;<% if (databaseType == 'nosql') { %>
+
 import org.springframework.data.mongodb.MongoDbFactory;<% } %>
 <% if (databaseType == 'sql') { %>
 import javax.sql.DataSource;<% } %>

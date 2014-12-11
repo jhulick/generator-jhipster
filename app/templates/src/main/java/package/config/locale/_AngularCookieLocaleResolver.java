@@ -9,6 +9,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -77,11 +78,9 @@ public class AngularCookieLocaleResolver extends CookieLocaleResolver {
                             "'" + (timeZone != null ? " and time zone '" + timeZone.getID() + "'" : ""));
                 }
             }
-            request.setAttribute(LOCALE_REQUEST_ATTRIBUTE_NAME,
-                    (locale != null ? locale: determineDefaultLocale(request)));
+            request.setAttribute(LOCALE_REQUEST_ATTRIBUTE_NAME, (locale != null ? locale: determineDefaultLocale(request)));
 
-            request.setAttribute(TIME_ZONE_REQUEST_ATTRIBUTE_NAME,
-                    (timeZone != null ? timeZone : determineDefaultTimeZone(request)));
+            request.setAttribute(TIME_ZONE_REQUEST_ATTRIBUTE_NAME, (timeZone != null ? timeZone : determineDefaultTimeZone(request)));
         }
     }
 }

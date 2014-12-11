@@ -25,17 +25,17 @@ JhipsterGenerator.prototype.askFor = function askFor() {
     var cb = this.async();
 
     console.log(chalk.red('\n' +
-        ' _     _   ___   __  _____  ____  ___       __  _____   __    __    _    \n' +
-        '| |_| | | | |_) ( (`  | |  | |_  | |_)     ( (`  | |   / /\\  / /`  | |_/ \n' +
-        '|_| | |_| |_|   _)_)  |_|  |_|__ |_| \\     _)_)  |_|  /_/--\\ \\_\\_, |_| \\ \n' +
-        '                             ____  ___   ___                             \n' +
-        '                            | |_  / / \\ | |_)                            \n' +
-        '                            |_|   \\_\\_/ |_| \\                            \n' +
-        '              _    __    _       __        ___   ____  _      __        \n' +
-        '             | |  / /\\  \\ \\  /  / /\\      | | \\ | |_  \\ \\  / ( (`       \n' +
-        '           \\_|_| /_/--\\  \\_\\/  /_/--\\     |_|_/ |_|__  \\_\\/  _)_)       \n'));
+        '               ╔╦╗╔═╗═╗ ╦  ╔═╗┌─┐┌─┐╔═╗  ╔═╗┌┬┐┌─┐┌─┐┬┌─      \n' +
+        '               ║║║╠═╣╔╩╦╝  ╠═╝├─┤├─┤╚═╗  ╚═╗ │ ├─┤│  ├┴┐      \n' +
+        '               ╩ ╩╩ ╩╩ ╚═  ╩  ┴ ┴┴ ┴╚═╝  ╚═╝ ┴ ┴ ┴└─┘┴ ┴      \n' +
+        '                                ╔═╗┌─┐┬─┐                     \n' +
+        '                                ╠╣ │ │├┬┘                     \n' +
+        '                                ╚  └─┘┴└─                     \n' +
+        '                        ╦ ╦┌─┐┌┐   ╔╦╗┌─┐┬  ┬┌─┐              \n' +
+        '                        ║║║├┤ ├┴┐   ║║├┤ └┐┌┘└─┐              \n' +
+        '                        ╚╩╝└─┘└─┘  ═╩╝└─┘ └┘ └─┘              \n'));
 
-    console.log('\nWelcome to the JHipster Generator\n');
+    console.log('\nWelcome to the MAX PaaS Webapp Generator\n');
 
     var prompts = [
         {
@@ -56,7 +56,7 @@ JhipsterGenerator.prototype.askFor = function askFor() {
                 return 'The package name you have provided is not a valid Java package name.';
             },
             message: '(2/13) What is your default Java package name?',
-            default: 'com.mycompany.myapp'
+            default: 'gov.omb.max.app'
         },
         {
             type: 'list',
